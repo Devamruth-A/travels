@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Travel Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h2, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <img class="bg" src="tkr.jpg" alt="CETKR">
+    <div class="container">
+        <h1>Welcome To the Joy of Travel: Heavenly Trips</h1>
+        <h2>Destinations available</h2>
+        <p>1.Paris</p>
+        <p>2.Dubai</p>
+        <p>3.Tokyo</p>
+        <form action="index.php" method="post" class="form">
+            <p>Enter your details to confirm your participation in the trip</p>
+            <input type="text" name="cust_id" id="cust_id" class="input" placeholder="Enter your Unique Customer ID" required>
+            <input type="text" name="f_name" id="name" class="input" placeholder="Enter your First Name" required>
+            <input type="text" name="l_name" id="l_name" class="input" placeholder="Enter your Last Name" required>
+            <input type="email" name="email" id="email" class="input" placeholder="Enter your Email" required>
+            <input type="tel" name="phone" id="phone" class="input" placeholder="Enter your Phone" required>
+            <p>Enter your booking details</p>
+            <input type="text" name="booking_id" id="booking_id" class="input" placeholder="Enter your Booking ID" required>
+            <input type="text" name="dest_id" id="dest_id" class="input" placeholder="Enter your Destination ID" required>
+            <select name="destination" id="destination" class="input" required>
+                <option value="">Select Destination</option>
+                <option value="Paris">Paris</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Tokyo">Tokyo</option>
+            </select>
+            <input type="date" name="travel_date" id="travel_date" class="input" placeholder="Enter your Travelling Date" required>
+            <input type="date" name="return_date" id="return_date" class="input" placeholder="Enter your Return Date" required>
+            <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>    
+    <link rel="stylesheet" href="login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Boxicons CDN -->
+</head>
+
+
+<body>
+    <img class="bg" src="login.jpg" alt="login">
+    <div class="wrapper">
+        <form onsubmit="return login()"> <!-- Prevents default form submission -->
+            <h1>Login</h1>
+            <div class="input-box">
+                Username:<input type="text" id="username" name="username" placeholder="Username" required> <!-- Added id="username" -->
+                <box-icon type='solid' name='user'></box-icon>
+            </div>
+            <div class="pass">
+                Password:<input type="password" id="password_user" name="password" placeholder="Password" required> <!-- Added id="password_user" -->
+                <box-icon type='solid' name='lock'></box-icon>
+            </div>
+            <div id="text_show" style="color:red;"></div> <!-- Text display for validation messages -->
+            <div class="check-box">
+                <label><input type="checkbox"> Remember me</label>
+                <a href="#">Forgot password?</a>  
+                <button type="submit" class="btn">Login</button>    
+            </div>
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        function login() {
+            // Get the values from the input fields
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password_user").value;
+            let text_show = document.getElementById("text_show");
+            let website_username = "deva"; // Predefined username
+            let website_password = "123456"; // Predefined password
+
+            if (username === website_username && password === website_password) {
+                text_show.style.color = "green";
+                text_show.innerHTML = "Login successful!";
+                
+                
+                 setTimeout(function() {
+                    window.location.href = "index2.html";
+                 }, 2000); // Delay of 2 seconds before redirection
+
+                return false; // Prevent form submission
+            } else {
+                text_show.style.color = "red";
+                text_show.innerHTML = "Invalid username or password!";
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
